@@ -32,6 +32,7 @@ const Home = () => {
 
   const updateTasks = () => {
     const dataFromLocalStorage = getTasksFromStore();
+    console.log(dataFromLocalStorage);
     const tasksFromStorage = Object.values(dataFromLocalStorage);
     tasksFromStorage.sort((a, b) => (a.srNo > b.srNo ? -1 : 1));
     setTasks(tasksFromStorage);
