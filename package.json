@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://manu310patel.github.io/my-priority-list/",
+  "homepage": "https://manu310patel.github.io/my-priority-list",
   "scripts": {
     "dev": "vite",
     "build": "vite build",

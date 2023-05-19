@@ -1,13 +1,22 @@
 const useLocalStore = (storageToken) => {
   const getTasksFromStore = () => {
-    const stringifiedData = localStorage.getItem(storageToken);
-    const dataFromLocalStorage = JSON.parse(stringifiedData);
-    return dataFromLocalStorage;
+    try {
+      const stringifiedData = localStorage.getItem(storageToken);
+      const dataFromLocalStorage = JSON.parse(stringifiedData);
+      return dataFromLocalStorage || {};
+    } catch (err) {
+      console.log(err);
+      return {};
+    }
   };
 
   const saveTasksToStore = (allTasks) => {
-    const stringifiedData = JSON.stringify(allTasks);
-    localStorage.setItem(storageToken, stringifiedData);
+    try {
+      const stringifiedData = JSON.stringify(allTasks);
+      localStorage.setItem(storageToken, stringifiedData);
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   const addTask = (newTask) => {
